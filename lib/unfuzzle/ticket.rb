@@ -34,7 +34,7 @@ module Unfuzzle
 
     # Find a single ticket by its ID
     def self.find_by_id(id)
-      response = Request.get("/projects/#{project_id}/tickets/#{id}")
+      response = Request.get("/tickets/#{id}")
       new(response.body)
     end
 
