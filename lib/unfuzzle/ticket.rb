@@ -32,9 +32,9 @@ module Unfuzzle
     attribute :severity_id, :from => 'severity-id', :type => :integer
     attribute :status
 
-    # Find a single ticket by its ID
-    def self.find_by_id(id)
-      response = Request.get("/tickets/#{id}")
+    # Find a single ticket within a project by its ID
+    def self.find_by_project_id_and_id(project_id, id)
+      response = Request.get("/projects/#{project_id}/tickets/#{id}")
       new(response.body)
     end
 
